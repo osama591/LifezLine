@@ -1,0 +1,49 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="FooLogFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="Lifezline.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %X{client} -  %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	<appender name="Host" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="Lifezline.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %X{client} -   %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	<appender name="outLogFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="Lifezline.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %X{client} -   %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	<appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="Threshold" value="INFO" />
+		<param name="File" value="Lifezline.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %X{client} -   %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+	<appender name="CA" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %X{client} -  %-5p  [%c{1}] %m %n" />
+		</layout>
+	</appender>
+
+
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="fileAppender" />
+		<appender-ref ref="CA" />
+	</root>
+</log4j:configuration>

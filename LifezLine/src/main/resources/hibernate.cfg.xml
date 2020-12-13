@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+
+
+		<!-- <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property> -->
+
+		<!-- <property name="dialect">org.hibernate.dialect.OracleDialect</property> -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- <property name="connection.url">jdbc:oracle:thin:@10.0.111.112:1529:iris</property> -->
+
+		<!-- <property name="connection.url"> jdbc:mysql://lifelineaws.cibjpd4sxcok.ap-south-1.rds.amazonaws.com:3306/LifezLineAmbulanceService</property> -->
+
+		<property name="connection.url">
+			jdbc:mysql://aa7d5eao514ifl.cibjpd4sxcok.ap-south-1.rds.amazonaws.com:3306/LifezLineAmbulanceService</property>
+
+		<property name="connection.username">root</property>
+		<!-- <property name="connection.password">F@st@123456789</property> -->
+
+		<property name="connection.password">admin123</property>
+
+		<!-- <property name="connection.url">jdbc:oracle:thin:@10.0.111.170:1521:esmart</property> -->
+		<!-- <property name="connection.username">esmart</property> -->
+		<!-- <property name="connection.password">esmart</property> -->
+
+		<!-- <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property> -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">100</property>
+		<property name="hibernate.c3p0.max_size">100</property>
+
+
+		<property name="hibernate.c3p0.max_statements">200</property>
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+
+
+
+
+
+
+		<!--hibernate.cfg.xml -->
+		<property name="hibernate.show_sql">true</property>
+		<!--hibernate.cfg.xml -->
+		<property name="hibernate.format_sql.format_sql">true</property>
+
+		<property name="use_sql_comments">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<mapping class="com.lifezline.ambulancemodel.AgentDetail" />
+		<mapping class="com.lifezline.ambulancemodel.CustomerDetail" />
+
+		<mapping class="com.lifezline.ambulancemodel.RideDetail" />
+
+
+	</session-factory>
+
+</hibernate-configuration>
